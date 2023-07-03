@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <!-- Compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+  <!-- Compiled and minified JavaScript -->
+  <!-- Import style -->
+  <!-- <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" /> -->
+  <!-- Import Vue 3 -->
+  <!-- <script src="//unpkg.com/vue@3"></script> -->
+  <!-- Import component library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.23.1/bootstrap-vue.min.js" integrity="sha512-SP/zE7YazvnUG95bWnA1AeC5+WtAOqumEHSgcKTNfVefAMsDcVCt6D3Q3goqR3vSf50zPG3OZtnMjBJd9GBgkw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+</head>
+<body>
+{% block navbarMenu %}{% endblock %}
+{% block main_content %}
+  <h1 class="text-3xl font-bold underline">
+    {% block heading %}{%endblock%}
+  </h1>
+{% endblock %}
+</body>
+</html>

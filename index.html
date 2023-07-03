@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>KiAfrika Generative AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/material    {% endblock%}ize/1.0.0/js/materialize.min.js"></script> -->
+
+</head>
+<body>
+    <h1 class="text-3xl font-bold underline">
+        Welcome to kiAfrika
+    </h1>
+    <script>
+        var callTextImage = (prmpt, txt)=>{
+
+            var prompt = prmpt.value;
+            var text = txt.value;
+            var myHeaders = new Headers();
+
+            myHeaders.append("Content-Type","application/json");
+
+            if(prompt=="" && text ==""){
+                alert("Both field can't be empty");
+            }
+            else if(prompt=="" && text != ""){
+                var prompt_ = text
+                console.log(" prompt value: "+prompt_);
+                var raw = JSON.stringify({"prompt":prompt_,"text":text});
+                var requestOpt = {
+                    method: 'POST',
+                    headers:myHeaders,
+                    body:raw,
+                    redirect:'follow'
+                };
+                fetch("https://tyzrq5iqhc.execute-api.ap-southeast-1.amazonaws.com/TestDev",requestOpt)
+                .then(response=>response.text())
+                .then(result => alert(JSON.parse(result).body))
+                .catch(error => console.log('error', error));
+                // txt.value="";
+            }
+            else if(prompt!="" && text == ""){
+                var prompt_ = prompt
+                console.log(" prompt value: "+prompt_);
+                var raw = JSON.stringify({"prompt":prompt_,"text":text});
+                var requestOpt = {
+                    method: 'POST',
+                    headers:myHeaders,
+                    body:raw,
+                    redirect:'follow'
+                };
+                fetch("https://tyzrq5iqhc.execute-api.ap-southeast-1.amazonaws.com/TestDev",requestOpt)
+                .then(response=>response.text())
+                .then(result => alert(JSON.parse(result).body))
+                .catch(error => console.log('error', error));
+                // prmpt.value="";
+                }
+            else{
+                alert("You should either chose or fill a text");
+            }
+
+        }
+    </script>
+    <script type="importmap">
+        {
+            "imports":{
+                "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
+                "bootstrap_vue": "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.23.1/bootstrap-vue.min.js"
+            }
+        }
+    </script>
+    <!--https://tyzrq5iqhc.execute-api.ap-southeast-1.amazonaws.com/TestDev-->
+    <h1 style="text-align:'center';">Welcome to kiAfrika Generative Images.</h1>
+    <div class="block-text" id="formEl">
+        <h2>Type a text description to generate an image.</h2>
+        <form method="post">
+            <label for="text"><h4>Text description or choose a text</h4></label>
+            <textarea id="text" rows="10" cols="100" name="prompt2" placeholder="Type-in your ideal description..."></textarea><br><br>
+            <select name="prompt" id="textPrompt">
+                <option value="">See and try Example texts...</option>
+                <option value="a woman standing on the beach wearing a white hijab"><h4>a woman standing on the beach wearing a white hijab</option>
+                <option value="A photograph of a woman seating on a hanging chair smiling">A photograph of a woman smiling while seating on a hanging chair</option>
+                <option value="photograph portrait of a woman smiling while seating on a sofa looking at the camera">photograph portrait of a woman smiling while seating on a sofa looking at the camera</option>
+                <option value="<new> photograph portrait of a woman smiling while seating on a sofa looking at the camera"> new photograph portrait of a woman smiling while seating on a sofa</option>                
+            </select>
+            <!-- <input name="prompt2" type="text" id="text"> -->
+            <input type="submit" onclick="callTextImage(document.getElementById('textPrompt'), document.getElementById('text'))">
+        </form>
+        <!-- {% if message %} -->
+            <h3>Your Text imput is: {{message}}</h3>
+        <!-- {% endif %} -->
+        <br>
+        <img src="{{ url_for('static',filename='image.jpg')}}" alt="Generated image" style="max-width:100%; max-height:100%;">
+        <div><h5><p>After submiting the text, the generated image takes a maximum of 40 seconds to be ready.<br>
+            To See the newly generated image; click on the url then press enter. It should be alright. (do not reload the page.) <br>
+            <b>Recommandation: The description should be at most 25 words.(but you can try more) </b><br>
+            You could use "new" to get a different image than the last, incase it is repeated. 
+        </p></h5>
+    </div>
+</body>
+</html>

@@ -1,0 +1,388 @@
+
+/* Add your CSS styles here */
+body {
+  font-family:  sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+    position: fixed;
+    background-color: #070564;
+    color: #fff;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .navbar-nav {
+    list-style-type: none;
+    display: flex;
+  }
+
+  .nav-item {
+    margin-right: 20px;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+
+  
+
+.hero {
+  background-image: url('images/parot.webp');
+  background-size: 100%;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  color: #f3d008;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 24px;
+  color: #f5f5f7;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero .btn {
+  padding: 12px 30px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: #0b0a57;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #1200b3;
+}
+
+.features {
+  padding: 400px ;
+  background-image: url('images/bs.jpg');
+  background-size: 400%;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.features .column{
+    justify-content: center;
+  }
+  
+  .features .col-lg-4 {
+    max-width: 500px;
+  }
+  
+  .features .card {
+    margin-bottom: 30px;
+    background-color: #fff;
+  }
+  
+  .features .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .features .card-body {
+    text-align: center;
+  }
+  
+  .features .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .features .card-text {
+    font-size: 0.9rem;
+  }
+  
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.card {
+  box-shadow: 2px 2px 10px rgba(248, 252, 4, 0.1);
+  border: none;
+  border-color: #faad06;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.card-img-center {
+  width: 100%;
+  height: 490px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 16px;
+  color: #555;
+}
+
+#creation-section {
+  background-color: #070564;
+  padding: 80px 0;
+  
+
+}
+
+#creation-section .col-md-8 {
+  text-align: center;
+}
+
+#creation-section h2 {
+  margin-bottom: 40px;
+}
+
+#creation-section form {
+  margin-bottom: 30px;
+}
+
+#creation-section .form-group {
+  margin-bottom: 20px;
+}
+
+#creation-section .btn-generate {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#creation-section .result-container {
+  display: none;
+  margin-top: 30px;
+}
+
+#creation-section .result-text {
+  margin-bottom: 10px;
+}
+
+#creation-section .generated-image {
+  max-width: 100%;
+}
+
+
+.testimonials {
+  background-color: #070564;
+  padding: 80px 0;
+}
+
+.testimonial-item {
+  text-align: center;
+  padding: 30px;
+}
+
+.testimonial-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.testimonial-text {
+  font-size: 18px;
+  color: #555;
+  margin-bottom:20px;
+  
+}
+
+.testimonial-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.testimonial-role {
+  font-size: 16px;
+  color: #14046b;
+}
+/* Add the following styles to your CSS file */
+
+/* Testimonials Section */
+.testimonials .carousel-inner {
+    overflow: hidden;
+  }
+  
+  .testimonials .carousel-item {
+    display: none;
+    position: relative;
+  }
+  
+  .testimonials .carousel-item:first-child {
+    display: block;
+  }
+  
+  .testimonials .carousel-item.active {
+    display: block;
+  }
+  
+  .testimonials .carousel-item.active.carousel-item-start {
+    transform: translateX(-100%);
+  }
+  
+  .testimonials .carousel-item.active.carousel-item-end {
+    transform: translateX(100%);
+  }
+  
+  .testimonials .carousel-item-next.carousel-item-start,
+  .testimonials .carousel-item-prev.carousel-item-end {
+    transform: translateX(0);
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideOutRight {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+  
+  @keyframes slideOutLeft {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .testimonials:hover .carousel-item-next.carousel-item-start,
+  .testimonials:hover .carousel-item-prev.carousel-item-end {
+    animation: none;
+  }
+  
+  .testimonials:hover .carousel-item-next,
+  .testimonials:hover .carousel-item-prev,
+  .testimonials:hover .carousel-item.active {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+  }
+  
+  .testimonials:hover .carousel-item-next {
+    animation-name: slideInRight;
+  }
+  
+  .testimonials:hover .carousel-item-prev {
+    animation-name: slideInLeft;
+  }
+  
+  .testimonials:hover .carousel-item.active {
+    animation-name: slideInLeft;
+  }
+  
+
+
+/* Contact Section */
+.contact-section {
+    background-color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.contact-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-info-item {
+  margin: 0 15px;
+}
+
+.contact-info-item i {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.contact-info-item p {
+  margin: 0;
+  font-size: 14px;
+}
+  
+  .footer {
+    background-color: #f3b304;
+    padding: 20px 0;
+  }
+  
+  .footer .container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer .text-muted {
+    color: #6c757d;
+    font-size: 14px;
+  }
+  

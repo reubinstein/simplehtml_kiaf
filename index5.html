@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KiAfrica | Text-Image Creation</title>
+  <link href="style3.css" rel="stylesheet">
+  
+</head>
+<body>
+  <!-- Navigation -->
+    <nav class="navbar fixed-top">
+        <a class="navbar-brand" href="#">KiAfrica</a>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonials">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-primary" href="login.html">Login</a>
+          </li>
+        </ul>
+      </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h1 class="hero-title">Unlock Your Creativity with KiAfrica</h1>
+          <p class="hero-description">Create stunning images from text descriptions using our advanced AI technology.</p>
+          <a href="#creation-section" class="btn btn-primary btn-lg">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title text-center">Key Features</h2>
+      <div class="column">
+        <div class="col-lg-4">
+          <div class="card">
+            <img src="images/old.jpg" alt="Feature 1" class="card-img-center">
+            <div class="card-body">
+              <h5 class="card-title">Text-to-Image Conversion</h5>
+              <p class="card-text">Transform your textual descriptions into captivating images with just a few clicks.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <img src="images/women-flower.avif" alt="Feature 2" class="card-img-center">
+            <div class="card-body">
+              <h5 class="card-title">Wide Range of Styles</h5>
+              <p class="card-text">Choose from a diverse collection of image styles and themes to suit your creative vision.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <img src="images/afro1.avif" alt="Feature 3" class="card-img-center">
+            <div class="card-body">
+              <h5 class="card-title">High-Quality Outputs</h5>
+              <p class="card-text">Experience stunning image outputs with our cutting-edge AI algorithms and image rendering techniques.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Creation Section -->
+<section id="creation-section" class="creation-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h2 class="mb-4">Type a text description to generate an image.</h2>
+        <form id="imageForm">
+          <div class="mb-3 form-group">
+            <label for="text"><h4>Text description or choose a text</h4></label>
+            <textarea id="text" rows="5" class="form-control" placeholder="Type your ideal description..."></textarea>
+          </div>
+          <div class="mb-3 form-group">
+            <select name="prompt" id="textPrompt" class="form-select">
+              <option value="">See and try Example texts...</option>
+              <option value="a woman standing on the beach wearing a white hijab">A woman standing on the beach wearing a white hijab</option>
+              <option value="A photograph of a woman seating on a hanging chair smiling">A photograph of a woman smiling while sitting on a hanging chair</option>
+              <option value="photograph portrait of a woman smiling while seating on a sofa looking at the camera">Photograph portrait of a woman smiling while sitting on a sofa looking at the camera</option>
+              <option value="<new> photograph portrait of a woman smiling while seating on a sofa looking at the camera">New photograph portrait of a woman smiling while sitting on a sofa</option>                
+            </select>
+          </div>
+          <div class="mb-3 form-group">
+            <input type="submit" value="Generate Image" class="btn btn-generate">
+          </div>
+        </form>
+        <div class="result-container">
+          <h3 class="result-text">Your Text input is: <span id="message"></span></h3>
+          <img id="generatedImage" src="{{ url_for('static', filename='image.jpg') }}" alt="Generated image" class="generated-image">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2 class="section-title text-center">What Our Users Say</h2>
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="testimonial-item">
+              <img src="images/bd.jpg" alt="User 1" class="testimonial-img">
+              <p class="testimonial-text">KiAfrica has revolutionized the way I create visuals for my projects. It's incredibly easy to use and produces stunning results every time.</p>
+              <h6 class="testimonial-name">Mrs. Framan</h6>
+              <p class="testimonial-role">Graphic Designer</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="testimonial-item">
+              <img src="images/bq.jpg" alt="User 2" class="testimonial-img">
+              <p class="testimonial-text">I've tried many text-to-image tools, but KiAfrica is by far the best. The quality of the generated images is outstanding, and it saves me so much time and effort.</p>
+              <h6 class="testimonial-name">Anne Bringhman</h6>
+              <p class="testimonial-role">Content Marketer</p>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+
+  <section id="contact" class="contact-section">
+    <h2 class="contact-title">Contact Us</h2>
+    <div class="contact-info">
+      <div class="contact-info-item">
+        <i class="fa fa-map-marker"></i>
+        <p>123 Street, City, Country</p>
+      </div>
+      <div class="contact-info-item">
+        <i class="fa fa-envelope"></i>
+        <p>info@example.com</p>
+      </div>
+      <div class="contact-info-item">
+        <i class="fa fa-phone"></i>
+        <p>+1 234 567 890</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container text-center">
+      <span class="text-muted">© 2023 KiAfrica. All rights reserved.</span>
+    </div>
+  </footer>
+
+
+</body>
+</html>

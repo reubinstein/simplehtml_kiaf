@@ -1,0 +1,87 @@
+/* style.css */
+
+body {
+  background-image: url('images/bs.jpg');
+  background-size: 400%;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+  }
+  
+  .login-container {
+    align-items: center;
+    justify-content: center;
+   background-color: #070564;
+    border-radius: 50px;
+    border-color: #ffee00;
+    padding: 40px;
+    width: 400px;
+  }
+  
+  .login-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .login-form {
+    margin-top: 20px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    color: #fff;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .btn {
+    background-color: #1100ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #30f509;
+  }
+  
+  .register-link {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .btn-register {
+    text-decoration: none;
+    color: #007bff;
+  }
+  .social-login{
+    justify-content: center;
+  }
